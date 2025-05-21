@@ -11,7 +11,7 @@ enum Breed: Codable {
     case dogBreed(DogBreed)
     case catBreed(CatBreed)
     
-    enum DogBreed: String, CaseIterable, Codable {
+    enum DogBreed : String, CaseIterable, Codable {
         case labradorRetriever = "Labrador Retriever"
         case poodle = "Poodle"
         case bulldog = "Bulldog"
