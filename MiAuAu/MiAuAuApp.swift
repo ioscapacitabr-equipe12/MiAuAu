@@ -10,11 +10,10 @@ import SwiftData
 
 @main
 struct MiAuAuApp: App {
-
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        // .modelContainer([])
+        .modelContainer(for: [Pet.self, Owner.self, Medication.self, Note.self])
     }
 }

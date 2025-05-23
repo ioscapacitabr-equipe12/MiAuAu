@@ -11,7 +11,7 @@ enum Breed: Codable {
     case dogBreed(DogBreed)
     case catBreed(CatBreed)
     
-    enum DogBreed : String, CaseIterable, Codable {
+    enum DogBreed: String, CaseIterable, Codable {
         case labradorRetriever = "Labrador Retriever"
         case poodle = "Poodle"
         case bulldog = "Bulldog"
@@ -30,16 +30,40 @@ enum Breed: Codable {
         case angora = "Angora"
         case bengal = "Bengal"
         case mixedBreed = "Mixed Breed"
-    }}
+    }
+    
+    var displayName: String {
+        switch self {
+        case .dogBreed(let breed):
+            return breed.rawValue
+        case .catBreed(let breed):
+            return breed.rawValue
+        }
+    }
+}
 
 enum Specie: String, CaseIterable, Codable {
     case dog = "Dog"
     case cat = "Cat"
+    
+    var emoji: String {
+        switch self {
+        case .dog: return "🐕"
+        case .cat: return "🐱"
+        }
+    }
 }
 
 enum Gender: String, CaseIterable, Codable {
     case male = "Male"
     case female = "Female"
+    
+    var emoji: String {
+        switch self {
+        case .male: return "♂️"
+        case .female: return "♀️"
+        }
+    }
 }
 
 enum PetColor: String, CaseIterable, Codable {
